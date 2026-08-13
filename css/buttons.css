@@ -1,0 +1,142 @@
+﻿/* ==========================================================================
+   buttons.css — Reusable button utility classes
+   Used across: Hero, Projects, Contact, and other sections
+   ========================================================================== */
+
+/* --- Primary button --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  background-color: var(--primary, #2563eb);
+  color: #ffffff;
+  color: var(--primary-foreground, #ffffff);
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  transition: background-color 200ms ease, transform 150ms ease;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-primary:hover { background-color: #1d4ed8; }
+
+/* --- Secondary button --- */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffffff;
+  background-color: var(--card, #ffffff);
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+  border: 1px solid #e2e8f0;
+  border-color: var(--border, #e2e8f0);
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  transition: background-color 200ms ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #f1f5f9;
+  background-color: var(--muted, #f1f5f9);
+}
+
+/* --- Outline button --- */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #2563eb;
+  color: var(--primary, #2563eb);
+  border: 1px solid #2563eb;
+  border-color: var(--primary, #2563eb);
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  transition: all 200ms ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: #2563eb;
+  background-color: var(--primary, #2563eb);
+  color: #ffffff;
+  color: var(--primary-foreground, #ffffff);
+}
+
+/* --- Light button (for dark backgrounds) --- */
+.btn-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f8fafc;
+  background-color: var(--secondary-foreground, #f8fafc);
+  color: #1e293b;
+  color: var(--secondary, #1e293b);
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  transition: opacity 150ms ease;
+  text-decoration: none;
+}
+
+.btn-light:hover { opacity: 0.9; }
+
+/* --- Ghost light button (transparent, white border, for dark backgrounds) --- */
+.btn-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  color: var(--secondary-foreground, #f8fafc);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  transition: background-color 150ms ease;
+  text-decoration: none;
+}
+
+.btn-ghost-light:hover { background-color: rgba(255, 255, 255, 0.2); }
+
+/* --- Disabled state --- */
+.btn-primary[disabled],
+.btn-secondary[disabled],
+.btn-outline[disabled],
+.btn-light[disabled],
+.btn-ghost-light[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Mobile safety — cegah tombol overflow ── */
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-light,
+.btn-ghost-light {
+  /* Tombol boleh wrap teks jika terlalu panjang di layar sangat kecil */
+  word-break: keep-all;
+  /* max-width agar tidak lebih lebar dari container */
+  max-width: 100%;
+}

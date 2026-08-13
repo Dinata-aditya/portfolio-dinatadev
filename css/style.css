@@ -1,0 +1,116 @@
+﻿/* ==========================================================================
+   style.css — Design tokens, CSS reset, base element styles, utility classes
+   DinataDev Portfolio — Vanilla HTML/CSS/JS
+   NOTE: Tidak ada media queries di file ini.
+   ========================================================================== */
+
+/* 1. Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. Design Tokens */
+:root {
+  --background:           #f8fafc;
+  --card:                 #ffffff;
+  --muted:                #f1f5f9;
+  --foreground:           #0f172a;
+  --card-foreground:      #1e293b;
+  --muted-foreground:     #64748b;
+  --secondary-foreground: #f8fafc;
+  --primary:              #2563eb;
+  --primary-foreground:   #ffffff;
+  --accent:               #dbeafe;
+  --accent-foreground:    #1e40af;
+  --secondary:            #1e293b;
+  --border:               #e2e8f0;
+  --ring:                 #2563eb;
+  --radius:               0.75rem;
+}
+
+/* 3. CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 4. Base Element Styles */
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+
+body {
+  background-color: #f8fafc;
+  background-color: var(--background, #f8fafc);
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+  overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+}
+
+p {
+  color: #64748b;
+  color: var(--muted-foreground, #64748b);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+img  { max-width: 100%; display: block; }
+a    { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul, ol { list-style: none; }
+
+/* Scroll margin — mencegah sticky header menutupi section heading */
+section { scroll-margin-top: 4rem; }
+
+/* 5. Utility Classes */
+.container-wide {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.section-padding { padding-block: 5rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 6. Animations */
+@keyframes ping {
+  0%   { transform: scale(1);   opacity: 0.75; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* 7. Global responsive utilities */
+@media (min-width: 640px) {
+  .section-padding  { padding-block: 6rem; }
+  .container-wide   { padding-inline: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .container-wide { padding-inline: 2rem; }
+}
+
+@media (min-width: 1024px) {
+  .container-wide { padding-inline: 2rem; }
+}
+

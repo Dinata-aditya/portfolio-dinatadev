@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build outputs (tidak dipakai, tapi tetap ignore untuk keamanan)
+dist/
+build/
+
+# Environment
+.env*
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Kiro AI planning files (opsional — uncomment jika tidak ingin di-commit)
+# .kiro/
+
+# Folder lama (bukan bagian project)
+portfolio dinata.dev/
+portfolio dinata/

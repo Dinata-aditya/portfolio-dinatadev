@@ -1,0 +1,137 @@
+/* ==========================================================================
+   services.css — Services & Currently Learning section and responsive rules
+   ========================================================================== */
+
+#services {
+  background-color: #f8fafc;
+  background-color: var(--background, #f8fafc);
+}
+
+/* Outer grid: 1-col mobile, 7fr 5fr desktop */
+.services-learning-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+/* --- Services column --- */
+.services-col h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+  margin-bottom: 1.5rem;
+}
+
+/* Inner cards grid: 1-col mobile, 2-col tablet+ */
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.service-card {
+  background-color: #ffffff;
+  background-color: var(--card, #ffffff);
+  border: 1px solid #e2e8f0;
+  border-color: var(--border, #e2e8f0);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.service-card-icon {
+  color: #2563eb;
+  color: var(--primary, #2563eb);
+}
+
+.service-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+}
+
+.service-card-desc {
+  font-size: 0.875rem;
+  color: #64748b;
+  color: var(--muted-foreground, #64748b);
+  line-height: 1.6;
+}
+
+/* --- Currently Learning column --- */
+.learning-col h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+  margin-bottom: 1.5rem;
+}
+
+.learning-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.learning-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: rgba(219, 234, 254, 0.3);
+  border: 1px solid #dbeafe;
+  border-color: var(--accent, #dbeafe);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.learning-item-icon {
+  flex-shrink: 0;
+  color: #2563eb;
+  color: var(--primary, #2563eb);
+  margin-top: 0.125rem;
+}
+
+.learning-item-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+  margin-bottom: 0.25rem;
+}
+
+.learning-item-desc {
+  font-size: 0.8125rem;
+  color: #64748b;
+  color: var(--muted-foreground, #64748b);
+  line-height: 1.5;
+}
+
+/* -----------------------------------------------------------------------
+   Responsive
+   ----------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .services-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .services-learning-grid { grid-template-columns: 7fr 5fr; }
+}
+
+/* ── Services full-width layout (tanpa Currently Learning) ── */
+.services-only-grid {
+  display: block;   /* full width, tidak dibagi 2 kolom */
+}
+
+.services-only-grid .services-col {
+  max-width: 100%;
+}
+
+/* 4 kolom di desktop untuk services-only */
+@media (min-width: 1024px) {
+  .services-only-grid .services-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

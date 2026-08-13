@@ -1,0 +1,285 @@
+/* ==========================================================================
+   hero.css — Hero section, 2-column layout dari mobile sampai desktop
+   ========================================================================== */
+
+#home {
+  background-color: #f8fafc;
+  background-color: var(--background, #f8fafc);
+}
+
+/* ── 2-column grid aktif dari mobile ── */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  text-align: left;
+}
+
+/* Kolom kiri = konten, kolom kanan = foto */
+.hero-content  { order: 1; }
+.hero-image-col { order: 2; }
+
+/* ── Status badge ── */
+.hero-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  background-color: #dbeafe;
+  background-color: var(--accent, #dbeafe);
+  color: #1e40af;
+  color: var(--accent-foreground, #1e40af);
+  border-radius: 9999px;
+  font-size: 0.625rem;   /* kecil di mobile */
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.badge-dot-wrapper {
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  flex-shrink: 0;
+}
+
+.badge-dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: #2563eb;
+  background-color: var(--primary, #2563eb);
+}
+
+.ping-dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: #2563eb;
+  background-color: var(--primary, #2563eb);
+  animation: ping 1500ms ease-in-out infinite;
+}
+
+/* ── Heading ── */
+.hero-content h1 {
+  font-size: clamp(1.1rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+  line-height: 1.15;
+  margin-bottom: 0.375rem;
+}
+
+.hero-content h1 .hero-subtitle {
+  display: block;
+  font-size: clamp(0.65rem, 2.5vw, 1.5rem);
+  color: #64748b;
+  color: var(--muted-foreground, #64748b);
+  font-weight: 600;
+  margin-top: 0.25rem;
+  line-height: 1.3;
+}
+
+/* ── Description (disembunyikan di layar sangat kecil, muncul mulai 480px) ── */
+.hero-description {
+  font-size: clamp(0.7rem, 2vw, 1.125rem);
+  color: #64748b;
+  color: var(--muted-foreground, #64748b);
+  line-height: 1.6;
+  margin: 0.375rem 0 0;
+  /* sembunyikan di HP kecil supaya tidak penuh sesak */
+  display: none;
+}
+
+/* ── Button group ── */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  justify-content: flex-start;
+  margin-top: 0.625rem;
+  width: 100%;
+}
+
+/* Tombol lebih kecil di mobile */
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary,
+.hero-buttons .btn-links {
+  font-size: 0.65rem;
+  padding: 0.4rem 0.625rem;
+  min-height: 32px;
+  border-radius: 0.5rem;
+  gap: 0.25rem;
+}
+
+.hero-buttons .btn-primary svg,
+.hero-buttons .btn-links svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ── Profile image ── */
+.hero-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-profile-img-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-profile-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-img-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  background-color: #e2e8f0;
+  background-color: var(--border, #e2e8f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  color: var(--muted-foreground, #64748b);
+}
+
+/* ── Floating card — hidden di mobile kecil ── */
+.hero-floating-card {
+  display: none;
+  position: absolute;
+  bottom: 0.5rem;
+  left: -0.5rem;
+  background-color: #ffffff;
+  background-color: var(--card, #ffffff);
+  border: 1px solid #e2e8f0;
+  border-color: var(--border, #e2e8f0);
+  border-radius: 0.75rem;
+  padding: 0.375rem 0.625rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #0f172a;
+  color: var(--foreground, #0f172a);
+}
+
+/* ── Links button ── */
+.btn-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #1e293b, #1e40af);
+  color: #fff;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  text-decoration: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+  border: 1px solid rgba(37,99,235,0.4);
+  white-space: nowrap;
+}
+
+.btn-links:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* =========================================================================
+   Responsive — 480px: tampilkan deskripsi, font sedikit lebih besar
+   ========================================================================= */
+@media (min-width: 480px) {
+  .hero-inner          { gap: 1.5rem; }
+  .hero-description    { display: block; }
+  .hero-status-badge   { font-size: 0.75rem; }
+
+  .hero-content h1     { font-size: clamp(1.375rem, 5vw, 3.75rem); }
+  .hero-content h1 .hero-subtitle { font-size: clamp(0.8rem, 2.8vw, 1.5rem); }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary,
+  .hero-buttons .btn-links {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
+    min-height: 36px;
+  }
+
+  .hero-floating-card  { display: flex; }
+}
+
+/* =========================================================================
+   Responsive — 640px: tablet kecil
+   ========================================================================= */
+@media (min-width: 640px) {
+  .hero-inner          { gap: 2rem; }
+  .hero-status-badge   { font-size: 0.8125rem; padding: 0.3rem 0.875rem; }
+  .hero-description    { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary,
+  .hero-buttons .btn-links {
+    font-size: 0.8125rem;
+    padding: 0.625rem 1rem;
+    min-height: 40px;
+  }
+}
+
+/* =========================================================================
+   Responsive — 768px: tablet
+   ========================================================================= */
+@media (min-width: 768px) {
+  .hero-inner          { gap: 3rem; }
+  .hero-description    { font-size: 1rem; }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary,
+  .hero-buttons .btn-links {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.25rem;
+    min-height: 44px;
+  }
+}
+
+/* =========================================================================
+   Responsive — 1024px: desktop, gap lebih lebar
+   ========================================================================= */
+@media (min-width: 1024px) {
+  .hero-inner          { gap: 4rem; }
+  .hero-description    { font-size: 1.125rem; margin: 1rem 0 0; }
+  .hero-status-badge   { font-size: 0.875rem; padding: 0.375rem 1rem; }
+  .hero-buttons        { gap: 1rem; margin-top: 1.5rem; }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary,
+  .hero-buttons .btn-links {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    min-height: 44px;
+  }
+
+  .hero-profile-img   { border-radius: 1.5rem; }
+  .hero-floating-card {
+    font-size: 0.75rem;
+    padding: 0.75rem 1rem;
+    left: -1.5rem;
+    bottom: 1rem;
+    border-radius: 1rem;
+    gap: 0.5rem;
+  }
+}

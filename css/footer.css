@@ -1,0 +1,73 @@
+﻿/* ==========================================================================
+   footer.css — Site footer and responsive rules
+   ========================================================================== */
+
+#site-footer {
+  background-color: #1e293b;
+  background-color: var(--secondary, #1e293b);
+  color: #f8fafc;
+  color: var(--secondary-foreground, #f8fafc);
+  padding-block: 2rem;
+}
+
+/* Stacked on mobile, horizontal on desktop */
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.footer-brand-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f8fafc;
+  color: var(--secondary-foreground, #f8fafc);
+}
+
+.footer-brand-subtitle {
+  font-size: 0.875rem;
+  color: rgba(248, 250, 252, 0.6);
+  margin-top: 0.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: rgba(248, 250, 252, 0.7);
+  transition: color 150ms ease;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #2563eb;
+  color: var(--primary, #2563eb);
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(248, 250, 252, 0.5);
+}
+
+/* -----------------------------------------------------------------------
+   Responsive
+   ----------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .footer-main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-links { justify-content: flex-end; }
+}

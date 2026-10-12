@@ -40,15 +40,15 @@ import { initContactForm }   from './contact.js';
  * }}
  */
 export const config = {
-  whatsappNumber: '62812345678',   // digits only, no "+" prefix
-  email: 'aditya@example.com',
-  githubUrl: 'https://github.com/dinatadev',
-  linkedinUrl: 'https://linkedin.com/in/dinatadev',
-  dribbbleUrl: 'https://dribbble.com/dinatadev',
-  fiverrUrl: 'https://fiverr.com/dinatadev',
-  upworkUrl: 'https://upwork.com/freelancers/dinatadev',
-  instagramUrl: 'https://instagram.com/dinatadev',
-  tiktokUrl: '',
+  whatsappNumber: '',              // isi: nomor WA kamu (contoh: 6281234567890)
+  email: '',                       // isi: email kamu
+  githubUrl: 'https://github.com/Dinata-aditya',
+  linkedinUrl: '',                 // isi: https://linkedin.com/in/username-kamu
+  dribbbleUrl: '',                 // isi jika punya, kosongkan jika tidak
+  fiverrUrl: '',                   // isi jika punya, kosongkan jika tidak
+  upworkUrl: '',                   // isi jika punya, kosongkan jika tidak
+  instagramUrl: '',                // isi: https://instagram.com/username-kamu
+  tiktokUrl: '',                   // isi jika punya, kosongkan jika tidak
 };
 
 // ── Link population ───────────────────────────────────────────────────────────
